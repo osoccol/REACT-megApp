@@ -48,12 +48,13 @@ class App extends Component {
     return (
     <div className="App">
       <h1>TODO List</h1>
-        <div>
-          <input value={this.state.term} placeholder="Saisir une tâche" onChange={this.handleChange} onKeyDown={this.handleKeyDown}/>
-          <button className="add" onClick={this.handleSubmit}></button>
-        </div>
-        <List items={this.state.items} onRemove={this.handleRemove}/>
+      <div>
+        <input value={this.state.term} placeholder="Saisir une tâche" onChange={this.handleChange} onKeyDown={this.handleKeyDown}/>
+        <button className="add" onClick={this.handleSubmit}></button>
       </div>
+      <List items={this.state.items} onRemove={this.handleRemove}/>
+    </div>
+      
     );
   }
 }
