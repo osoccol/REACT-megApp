@@ -1,38 +1,53 @@
-html {
-	background-color: #ff44ff;
-}
-
 .App {
-    text-align: center;
-    width: 600px;
-    margin: auto;
-    background-color: #ffff99;
-    min-height: 300px;
-	font-family: "Comic Sans MS", cursive, sans-serif;
+  display: flex;
+  flex: auto;
 }
 
-input {
-	font-size: 2em;
+.menu {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  background-image: linear-gradient(red, yellow);
+  box-shadow: 0 4px 8px 0 rgb(138, 138, 138), 0 6px 20px 0 rgb(138, 138, 138);
+  font-style: oblique;
+  font-family: 'Avantgarde', 'TeX Gyre Adventor', 'URW Gothic L', 'sans-serif';
+}
+ 
+.menu li :visited, 
+.menu li :hover {
+  list-style: none;
+  margin: 0.5em;
+  color: black;
 }
 
-.add, .delete {
-	background-image: url(./plus-circle-solid.svg);
-	width: 25px;
-	height: 25px;
-	margin-left: 10px;
+.board {
+  position: relative;
+  left: 100px;
+  width: 75%;
+  margin: auto;
 }
 
-.delete {
-	background-image: url(./minus-circle-solid.svg);
+table {
+  margin-top: 5%;
 }
 
-ul {
-	list-style: none;
+td {
+  text-align: center;
+  vertical-align: center;
 }
 
-li {
-	width: auto;
-	font-size: 2em;
-	vertical-align: center;
-	margin: auto;
+img {
+  width: 50%;
+  margin-top: 2em;
+  border: 1px solid rgb(202, 202, 202);
+  box-shadow: 0 0.2em 0.2em 0 black;
+}
+
+td :hover {
+  width: 51%;
+}
+
+.games {
+  margin-top: 200px;
+  margin-left: 30%;
 }

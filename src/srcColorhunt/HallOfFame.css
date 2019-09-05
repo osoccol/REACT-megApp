@@ -1,0 +1,14 @@
+﻿.hallOfFame {
+  width: 80%;
+  border-collapse: collapse;
+  margin:auto;
+}
+
+.hallOfFame .date {
+  width: 50%;
+  text-align: center;
+}
+
+.hallOfFame tr:nth-child(even) {
+  background: #eee;
+}
