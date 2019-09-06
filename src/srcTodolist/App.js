@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import './App.css';
-import List from './List';
-import cookie from 'react-cookies';
+import React, {Component} from "react";
+import "./App.css";
+import List from "./List";
+import cookie from "react-cookies";
 
-class Todolist extends Component {
+class Todolist extends Component{
 
-  constructor(props) {
+  constructor(props){
     super(props);
     this.state = {
-      term: '',
-      items: cookie.load("list") || [],
-      };
+      term: "",
+      items: cookie.load("list") || []
+    };
   }
 
   handleChange = (event) => {
     const term = event.target.value;
     this.setState({term});
   }
-  
+
   handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter"){
       this.handleSubmit();
     }
   }
@@ -29,31 +29,31 @@ class Todolist extends Component {
       return;
     }
     this.setState({
-      term: '',
-      items: [...this.state.items, this.state.term],
-      }, this.saveCookie);
+      term: "",
+      items: [...this.state.items, this.state.term]
+    }, this.saveCookie);
   }
-  
+
   handleRemove = (index) => {
     const listItems = this.state.items;
     listItems.splice(index, 1);
     this.setState({items: listItems}, this.saveCookie);
   }
-  
+
   saveCookie = () => {
     cookie.save("list", this.state.items);
   }
 
-  render() {
+  render(){
     return (
-    <div className="AppTodo">
-      <h1>TODO List</h1>
+      <div className="AppTodo">
+        <h1>TODO List</h1>
         <div>
           <input value={this.state.term} placeholder="Saisir une tâche" onChange={this.handleChange} onKeyDown={this.handleKeyDown}/>
-          <button className="add" onClick={this.handleSubmit}></button>
+          <button className="add" onClick={this.handleSubmit}/>
         </div>
         <List items={this.state.items} onRemove={this.handleRemove}/>
-    </div>
+      </div>
     );
   }
 }

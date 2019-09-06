@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Link, Route, Switch, Redirect } from 'react-router-dom'
+import React, {Component} from "react";
+import "./App.css";
+import {Link, Route, Switch, Redirect} from "react-router-dom";
 
-import Home from './Homepage';
-import Memory from './srcMemory/App';
-import TodoList from './srcTodolist/App';
-import Hangman from './srcHangman/App';
-import Colorhunt from './srcColorhunt/App'
+import Home from "./Homepage";
+import Memory from "./srcMemory/App";
+import TodoList from "./srcTodolist/App";
+import Hangman from "./srcHangman/App";
+import Colorhunt from "./srcColorhunt/App";
 
-class App extends Component {
+class App extends Component{
 
-  render() {
+  render(){
     return (
       <div className="App">
         <div className="menu">
@@ -30,7 +30,7 @@ class App extends Component {
             <Route path="/hangman" component={Hangman}/>
             <Route path="/todolist" component={TodoList}/>
           </Switch>
-          <Redirect to="/home" />
+          <Redirect to="/home"/>
         </div>
       </div>
     );

@@ -5,29 +5,28 @@
 }
 
 .letter {
-	font-size: 1.8em;
-	border: 1px solid black;
-	collapse: separate;
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	margin: 0.1em;
+  font-size: 1.8em;
+  border: 1px solid black;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin: 0.1em;
 }
 
 .masque, .guesses, .retry {
-	font-size: 2em;
-	margin-top:1em;
-	margin-bottom:1em;
+  font-size: 2em;
+  margin-top:1em;
+  margin-bottom:1em;
 }
 
 .masqueItem {
-	margin: 0.1em;
+  margin: 0.1em;
 }
 
 button {
-	background-color: white;
+  background-color: white;
 }
 
 .clicked {
-	background-color: grey;
+  background-color: grey;
 }
