@@ -33,6 +33,8 @@
     "plugin:react/recommended"
   ],
 
+  "parser": "babel-eslint",
+
   // Ajout de règle spécifiques
   "rules": {
     // Désactivation des règles importés dans les lots. La désactivation est temporaire
@@ -61,7 +63,7 @@
     "no-extra-bind": "error",
     "no-fallthrough": ["error", { "commentPattern": "break[\\s\\w]*omitted" }],
     "no-floating-decimal": "error",
-    "no-invalid-this": "error",
+    // "no-invalid-this": "error",
     "no-loop-func": "error",
     "no-magic-numbers": ["error", {"ignoreArrayIndexes": true, "ignore": [-1, 0, 1, 2]}],
     "no-multi-spaces": ["error", {"ignoreEOLComments": true}],
