@@ -36,7 +36,7 @@ class Hangman extends Component{
   letterClicked = (letter) => {
     const {/* guesses,*/ usedLetters} = this.state;
     letter.target.className = letter.target.className + " clicked";   // Ajoute la classe 'clicked' au bouton
-    letter = letter.target.innerHTML;                // Associe la lettre cliquee plutot que l'element entier
+    letter = letter.target.innerHTML;                                 // Associe la lettre cliquee plutot que l'element entier
 
     // const newGuesses = guesses + 1
     const newUsedLetters = usedLetters.concat(letter);

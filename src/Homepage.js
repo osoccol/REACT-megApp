@@ -2,10 +2,10 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import "./Homepage.css";
 
-import mem from "./memory.PNG";
-import todo from "./todolist.PNG";
-import color from "./colorhunt.PNG";
-import hang from "./hangman.PNG";
+import mem from "./asset/img/memory.PNG";
+import todo from "./asset/img/todolist.PNG";
+import color from "./asset/img/colorhunt.PNG";
+import hang from "./asset/img/hangman.PNG";
 
 class Home extends Component{
   render(){
