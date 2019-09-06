@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Todolist from "../App";
+import Memory from "../../srcMemory/App";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<Todolist/>, div);
+  ReactDOM.render(<Memory/>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
