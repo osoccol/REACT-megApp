@@ -1,59 +1,40 @@
-import React, { Component } from 'react';
-import './App.css';
-import List from './List';
-import cookie from 'react-cookies';
+import React, {Component} from "react";
+import "./App.css";
+import {BrowserRouter, Link, Route, Switch, Redirect} from "react-router-dom";
 
-class App extends Component {
+import Home from "./Homepage";
+import Memory from "./srcMemory/App";
+import TodoList from "./srcTodolist/App";
+import Hangman from "./srcHangman/App";
+import Colorhunt from "./srcColorhunt/App";
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      term: '',
-      items: cookie.load("list") || [],
-      };
-  }
+class App extends Component{
 
-  handleChange = (event) => {
-    const term = event.target.value;
-    this.setState({term});
-  }
-  
-  handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
-      this.handleSubmit();
-    }
-  }
-
-  handleSubmit = () => {
-    if(this.state.term === ""){
-      return;
-    }
-    this.setState({
-      term: '',
-      items: [...this.state.items, this.state.term],
-      }, this.saveCookie);
-  }
-  
-  handleRemove = (index) => {
-    const listItems = this.state.items;
-    listItems.splice(index, 1);
-    this.setState({items: listItems}, this.saveCookie);
-  }
-  
-  saveCookie = () => {
-    cookie.save("list", this.state.items);
-  }
-
-  render() {
+  render(){
     return (
-    <div className="App">
-      <h1>TODO List</h1>
-        <div>
-          <input value={this.state.term} placeholder="Saisir une tâche" onChange={this.handleChange} onKeyDown={this.handleKeyDown}/>
-          <button className="add" onClick={this.handleSubmit}></button>
+      <BrowserRouter>
+        <div className="App">
+          <div className="menu">
+            <ul>
+              <li><Link to="/home" onClick={this.handleChange}>Homepage</Link></li>
+              <li><Link to="/memory" onClick={this.handleChange}>Memory</Link></li>
+              <li><Link to="/hangman" onClick={this.handleChange}>Hangman</Link></li>
+              <li><Link to="/colorhunt" onClick={this.handleChange}>Colorhunt</Link></li>
+              <li><Link to="/todoList" onClick={this.handleChange}>TodoList</Link></li>
+            </ul>
+          </div>
+          <div className="board">
+            <Switch>
+              <Route path="/home" component={Home}/>
+              <Route path="/memory" component={Memory}/>
+              <Route path="/colorhunt" component={Colorhunt}/>
+              <Route path="/hangman" component={Hangman}/>
+              <Route path="/todolist" component={TodoList}/>
+            </Switch>
+            <Redirect to="/home"/>
+          </div>
         </div>
-        <List items={this.state.items} onRemove={this.handleRemove}/>
-      </div>
+      </BrowserRouter>
     );
   }
 }

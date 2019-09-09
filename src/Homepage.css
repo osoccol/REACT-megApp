@@ -1,0 +1,15 @@
+.board2x2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+img {
+  width:60%;
+  vertical-align: center;
+}
+
+a {
+  width: 40%;
+  text-align: center;
+}

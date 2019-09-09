@@ -1,0 +1,38 @@
+/*html {
+	background-color: #ff44ff;
+}*/
+
+.AppTodo {
+    text-align: center;
+    width: 600px;
+    margin: auto;
+    background-color: #ffff99;
+		min-height: 300px;
+		font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+input {
+	font-size: 2em;
+}
+
+.add, .delete {
+	background-image: url(./plus-circle-solid.svg);
+	width: 25px;
+	height: 25px;
+	margin-left: 10px;
+}
+
+.delete {
+	background-image: url(./minus-circle-solid.svg);
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	width: auto;
+	font-size: 2em;
+	vertical-align: center;
+	margin: auto;
+}
